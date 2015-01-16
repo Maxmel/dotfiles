@@ -4,6 +4,9 @@ ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 ZSH_THEME="max-2"
 
+# Set custom directory
+ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh/custom
+
 alias railspry="pry -r ./config/environment"
 alias gs="git status"
 
