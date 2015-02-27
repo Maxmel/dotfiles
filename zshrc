@@ -67,3 +67,4 @@ export EDITOR='emacs'
 
 # z 
 . `brew --prefix`/etc/profile.d/z.sh
+export TERM=xterm-256color
