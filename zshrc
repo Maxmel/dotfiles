@@ -9,6 +9,13 @@ ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh/custom
 
 alias railspry="pry -r ./config/environment"
 alias gs="git status"
+alias rs1="bundle exec rails server"
+alias rs2="bundle exec rails server -p 3030"
+alias dbm="bundle exec rake db:migrate"
+alias dbr="bundle exec rake db:reset db:fixtures:load"
+
+alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias nvim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
