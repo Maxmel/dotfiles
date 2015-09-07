@@ -15,7 +15,7 @@ alias dbm="bundle exec rake db:migrate"
 alias dbr="bundle exec rake db:reset db:fixtures:load"
 
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
-alias nvim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+#alias nvim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -67,11 +67,17 @@ export PATH="$PATH:/Users/Max/.rvm/gems/ruby-1.9.3-p327/bin:/Users/Max/.rvm/gems
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR='emacs'
+export EDITOR='v'
+
+# Base16 Shell
+#BASE16_SCHEME="tomorrow"
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+#[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # z 
 . `brew --prefix`/etc/profile.d/z.sh
-export TERM=xterm-256color
+#set TERM
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
