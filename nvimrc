@@ -15,11 +15,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'vim-scripts/ScrollColors'
 Plugin 'bling/vim-airline'
 Plugin 'project.tar.gz'
 Plugin 'surround.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'rking/ag.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,7 +48,10 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 
 "" Whitespace
-set nowrap                      " don't wrap lines
+set wrap                        " wrap lines
+set linebreak                   " only wrap at breakat char 
+set nolist
+set textwidth=100
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
@@ -60,8 +70,57 @@ set mat=5  " Bracket blinking.
 set cursorline
 set background=dark
 colorscheme base16-eighties
-""let base16colorspace=256 " Access colors present in 256 colorspace
-""set t_Co=256 " 256 color mode
 
-"" Tab line
-let g:airline#extensions#tabline#enabled = 1
+set re=1
+set ttyfast
+set lazyredraw
+
+let mapleader=","
+
+"" Buffers
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
+"" Indent Guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+"" airline
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:ctrlp_working_path_mode = 0
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
+
+"" CtrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+" open ag.vim
+nnoremap <leader>a :Ag
+"" No use the arrow keys !
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
