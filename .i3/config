@@ -2,7 +2,7 @@
 # this file and re-run i3-config-wizard(1).
 
 set $mod Mod1
-font pango:Ubuntu 8
+font pango:Source Code Pro Light 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
