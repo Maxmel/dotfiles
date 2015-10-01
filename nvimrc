@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -68,8 +68,8 @@ set nu  " Line number on
 set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
 set cursorline
-set background=dark
-colorscheme base16-eighties
+" set background=dark
+" colorscheme base16-eighties
 
 set re=1
 set ttyfast
