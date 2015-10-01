@@ -1,12 +1,8 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
 
 set $mod Mod1
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Ubuntu 9
+font pango:Ubuntu 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -71,8 +67,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
+bindsym $mod+1 workspace 1:terms
+bindsym $mod+2 workspace 2:web
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
@@ -83,8 +79,8 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+1 move container to workspace 1:terms
+bindsym $mod+Shift+2 move container to workspace 2:web
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
@@ -127,7 +123,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-new_window pixel 5
+new_window pixel 3
 
 # Base16 Eighties colors
 set $color00 #2d2d2d
@@ -160,10 +156,10 @@ bar {
         colors {
                 statusline $color05
                 background $color00
-		focused_workspace  $color01 $color01 $color06 
-		active_workspace   $color01 $color00 $color03
-		inactive_workspace $color02 $color00 $color07
-		urgent_workspace   $color08 $color07 $color08
+                focused_workspace  $color01 $color01 $color06 
+                active_workspace   $color01 $color00 $color03
+                inactive_workspace $color00 $color00 $color07
+                urgent_workspace   $color08 $color07 $color08
         }
 	strip_workspace_numbers yes
 }
