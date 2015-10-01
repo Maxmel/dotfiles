@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="max-2"
 
 # Set custom directory
-ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh/custom
+ZSH_CUSTOM=$HOME/.dotfiles/oh-my-zsh/custom
 
 alias railspry="pry -r ./config/environment"
 alias gs="git status"
@@ -41,14 +41,12 @@ export PATH="$PATH:/Users/Max/.rvm/gems/ruby-1.9.3-p327/bin:/Users/Max/.rvm/gems
 export EDITOR='v'
 
 # Base16 Shell
-#BASE16_SCHEME="tomorrow"
-#BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-#[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+BASE16_SCHEME="eighties"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# z 
-. `brew --prefix`/etc/profile.d/z.sh
 #set TERM
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
