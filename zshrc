@@ -41,14 +41,14 @@ export PATH="$PATH:/Users/Max/.rvm/gems/ruby-1.9.3-p327/bin:/Users/Max/.rvm/gems
 export EDITOR='nvim'
 
 # Base16 Shell
-BASE16_SCHEME="eighties"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+#BASE16_SCHEME="ocean"
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+#[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # z 
-if [[ `uname` == 'Darwin' ]]; then . `brew --prefix`/etc/profile.d/z.sh; fi
+#if [[ `uname` == 'Darwin' ]]; then . `brew --prefix`/etc/profile.d/z.sh; fi
 #set TERM
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
