@@ -14,8 +14,8 @@ xterm*faceName:            Terminus:style=Regular:size=10
 
 ! URxvt --------------------------------------------------
 URxvt.scrollBar:           false
-URxvt.font:                xft:Hack:size=8
-URxvt.letterSpace:         -1
+URxvt.font:                xft:Source Code Pro Light:size=9
+URxvt.letterSpace:         -2
 URxvt.termName:            rxvt-256color
 URxvt.perl-ext-common:     default,matcher,vtwheel
 URxvt.urlLauncher:         firefox
