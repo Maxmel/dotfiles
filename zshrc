@@ -15,6 +15,7 @@ alias dbm="bundle exec rake db:migrate"
 alias dbr="bundle exec rake db:reset db:fixtures:load"
 
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias nano='nvim'
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
  COMPLETION_WAITING_DOTS="true"
@@ -22,7 +23,7 @@ alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler gem rails ruby colored-man colorize cp bower heroku postgres node npm rake rvm osx zsh-syntax-highlighting)
+plugins=(git brew bundler gem rails ruby colored-man colorize cp bower heroku postgres node npm rake rvm osx zsh-syntax-highlighting tmux thefuck zsh-autosuggestions)
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
@@ -39,6 +40,7 @@ export PATH="$PATH:/Users/Max/.rvm/gems/ruby-1.9.3-p327/bin:/Users/Max/.rvm/gems
 #   export EDITOR='mvim'
 # fi
 export EDITOR='nvim'
+export VISUAL='nvim'
 
 # Base16 Shell
 #BASE16_SCHEME="ocean"
@@ -49,6 +51,8 @@ export EDITOR='nvim'
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # z 
-#if [[ `uname` == 'Darwin' ]]; then . `brew --prefix`/etc/profile.d/z.sh; fi
+# if [[ `uname` == 'Darwin' ]]; then . `brew --prefix`/etc/profile.d/z.sh; fi
+# fasd
+eval "$(fasd --init auto)"
 #set TERM
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi

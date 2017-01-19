@@ -27,6 +27,8 @@ Plugin 'xolox/vim-misc'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'rbgrouleff/bclose.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'scrooloose/nerdtree'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,7 +75,7 @@ set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
 set cursorline
 set background=dark
-colorscheme gruvbox
+colorscheme nord
 set termguicolors
 
 set t_ut=
@@ -139,7 +141,15 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-map <leader>f :call OpenRanger()<CR>
+" NERDTree configuration
+nmap <Tab><Tab> :NERDTreeToggle<CR>
+" reveal the current file in NERDTree
+map <Leader>f :NERDTreeFind<CR>
 
 map <c-s> <Esc>:w<CR>
 imap <c-s> <Esc>:w<CR>i
+
+" preview replace etc.
+if exists('&inccommand')
+  set inccommand=split
+endif
