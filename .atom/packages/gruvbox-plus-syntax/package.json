@@ -1,0 +1,74 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-1161115-71896-1xn320z/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-1161115-71896-1xn320z/package.tgz",
+        "spec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-1161115-71896-1xn320z/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/apm-install-dir-1161115-71896-k9n2bf"
+    ]
+  ],
+  "_from": "../d-1161115-71896-1xn320z/package.tgz",
+  "_id": "gruvbox-plus-syntax@1.2.5",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/gruvbox-plus-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-1161115-71896-1xn320z/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-1161115-71896-1xn320z/package.tgz",
+    "spec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-1161115-71896-1xn320z/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-1161115-71896-1xn320z/package.tgz",
+  "_shasum": "0548462aa25eb516070269f7dc0c2d4f23e7811c",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-1161115-71896-1xn320z/package.tgz",
+  "_where": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/apm-install-dir-1161115-71896-k9n2bf",
+  "bugs": {
+    "url": "https://github.com/Briles/gruvbox-atom/issues"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.2.0"
+  },
+  "description": "Syntax themes with pastel 'retro groove' colors, dark/light mode switching, & contrast alternatives",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/Briles/gruvbox-atom#readme",
+  "keywords": [
+    "gruvbox",
+    "dark",
+    "light",
+    "medium",
+    "soft",
+    "hard",
+    "vim",
+    "retro",
+    "groove"
+  ],
+  "license": "MIT",
+  "main": "./lib/gruvbox",
+  "name": "gruvbox-plus-syntax",
+  "optionalDependencies": {},
+  "readme": "[![GitHub Tag](https://img.shields.io/github/tag/Briles/gruvbox-atom.svg?style=flat-square)](https://github.com/Briles/gruvbox-atom/tags)\n[![apm](https://img.shields.io/apm/dm/gruvbox-plus-syntax.svg?style=flat-square)](https://atom.io/themes/gruvbox-plus-syntax)\n\n<p align=\"center\"><img src=\"https://cdn.rawgit.com/Briles/gruvbox-atom/master/assets/banner-image.svg\" alt=\"gruvbox for Atom\" width=\"327px\" height=\"122px\"></p>\n\nBased on [gruvbox for Sublime Text](https://github.com/Briles/gruvbox)\n\n--------------------------------------------------------------------------------\n\n![Screenshot Dark](http://i.imgur.com/F7ZCXQy.png)\n![Screenshot Light](http://i.imgur.com/I9pnfBP.png)\n\nContrast options\n----------------\n\n![Screenshot Contrast Options](http://i.imgur.com/haBkSb3.png)\n\nLicense\n-------\n\n[MIT](https://en.wikipedia.org/wiki/MIT_License)\n\nThanks\n------\n\nThanks to:\n\n* [Pavel Pertsev](https://github.com/morhetz) for creating gruvbox for Vim.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Briles/gruvbox-atom.git"
+  },
+  "theme": "syntax",
+  "version": "1.2.5"
+}

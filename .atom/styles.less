@@ -1,0 +1,114 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+@font-size: 10px;
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+// To style other content in the text editor's shadow DOM, use the ::shadow expression
+atom-text-editor::shadow .cursor {
+  // border-color: red;
+}
+html, body, .tab-bar .tab, .find-and-replace, .status-bar{
+  font-size: 10px;
+  font-family: "Source Sans Pro";
+}
+.status-bar {
+  font-family: "Source Sans Pro";
+  height: 24px;
+  line-height: 16px;
+}
+// Hide title-bar
+.title-bar{
+  display: none;
+}
+// Add margin above left column to not hide closing buttons
+atom-panel-container.left{
+  margin-top: 25px;
+}
+.tab-bar{
+  height: 24px;
+  padding-left: 70px;
+  .tab{
+    height: 24px;
+    line-height: 24px;
+    font-family: "Source Sans Pro";
+    .close-icon{
+      top: 4px;
+    }
+  }
+}
+.icon-tools::before{
+  font-size: 12px;
+}
+.settings-view { font-size: 12px; }
+.tool-panel .tree-view li.list-nested-item{
+  .header.list-item{
+    .name{
+      font-size: 12px;
+    }
+    span{
+      font-family: "Source Sans Pro";
+    }
+    font-family: "Source Sans Pro";
+  }
+  .entries .entry.list-item {
+    font-family: "Source Sans Pro";
+    .name{
+      font-size: 12px;
+    }
+  }
+}
+.list-group li:not(.list-nested-item).selected, .list-tree li:not(.list-nested-item).selected, .list-group li.list-nested-item.selected > .list-item, .list-tree li.list-nested-item.selected > .list-item, .list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  &:hover{
+    font-size: 12px;
+    font-family: "Source Sans Pro";
+  }
+}
+.list-tree.has-collapsable-children .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+    // padding-left: 12px;
+}
+
+linter-message {
+    font-size: 10px;
+    line-height: 1.0;
+}
+.left:not(:empty) + .vertical{
+  .tab-bar{
+    padding-left: 0px;
+    margin-left: -95px;
+    width: calc(~"100% + 95px");
+  }
+}
+.left:empty + .vertical{
+  .tab-bar{
+    padding-left: 70px;
+    margin-left: 0px
+  }
+}
+.tab-bar .tab.modified:not(:hover) .close-icon{
+  top: 8px;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "ruby-slim",
+  "version": "0.2.0",
+  "private": false,
+  "description": "slim template support",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skord/atom-ruby-slim.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# ruby-slim package\n\nSlim support for Atom.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/skord/atom-ruby-slim/issues"
+  },
+  "homepage": "https://github.com/skord/atom-ruby-slim#readme",
+  "_id": "ruby-slim@0.2.0",
+  "_shasum": "d144550fcfbc1e212f7b437b76d17d71a604c8b8",
+  "_resolved": "file:../d-11688-73898-ckew3k/package.tgz",
+  "_from": "../d-11688-73898-ckew3k/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

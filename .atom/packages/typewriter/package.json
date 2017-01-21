@@ -1,0 +1,69 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-117018-91304-152u7zc/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-117018-91304-152u7zc/package.tgz",
+        "spec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-117018-91304-152u7zc/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/apm-install-dir-117018-91304-lny30s"
+    ]
+  ],
+  "_from": "../d-117018-91304-152u7zc/package.tgz",
+  "_id": "typewriter@0.5.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/typewriter",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-117018-91304-152u7zc/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-117018-91304-152u7zc/package.tgz",
+    "spec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-117018-91304-152u7zc/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117018-91304-152u7zc/package.tgz",
+  "_shasum": "16c3851c4054d6360e01e27d4b0988e20975dc2a",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/d-117018-91304-152u7zc/package.tgz",
+  "_where": "/private/var/folders/jx/7t21dvx90vb9lvms3zb7ztyr0000gn/T/apm-install-dir-117018-91304-lny30s",
+  "bugs": {
+    "url": "https://github.com/braver/typewriter/issues"
+  },
+  "dependencies": {
+    "jquery": "2.x.x"
+  },
+  "description": "A better writing experience for Atom",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.13.0 <2.0.0"
+  },
+  "homepage": "https://github.com/braver/typewriter#readme",
+  "keywords": [
+    "writing",
+    "markdown",
+    "mediawiki",
+    "zen",
+    "distraction free"
+  ],
+  "license": "MIT",
+  "main": "./lib/typewriter",
+  "name": "typewriter",
+  "optionalDependencies": {},
+  "readme": "# typewriter\n\nLike a miniature version of [Zen](https://atom.io/packages/zen), this package improves the writing experience in Atom:\n\n* Centered layout\n* No gutter\n* No scrollbar (unless you hover over the editor)\n* But keeps the tabs, tree-view, minimap etc.\n* Enables soft-wrapping for selected scopes\n\nWorks out of the box for (GF-)Markdown, Latex and MediaWiki files. Settings allow you to select the scopes that should trigger typewriter mode.\n\n![](https://raw.githubusercontent.com/braver/typewriter/master/resources/screenshot.png)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/braver/typewriter.git"
+  },
+  "version": "0.5.0"
+}
