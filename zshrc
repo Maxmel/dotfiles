@@ -23,7 +23,14 @@ alias nano='nvim'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler gem rails ruby colored-man colorize cp bower heroku postgres node npm rake rvm osx zsh-syntax-highlighting tmux thefuck zsh-autosuggestions)
+case "${OSTYPE}" in
+  linux*)
+    plugins=(git bundler gem rails ruby colored-man colorize cp bower heroku postgres node npm rake rvm zsh-syntax-highlighting tmux thefuck zsh-autosuggestions)
+    ;;
+  darwin*)
+    plugins=(git brew bundler gem rails ruby colored-man colorize cp bower heroku postgres node npm osx rake rvm zsh-syntax-highlighting tmux thefuck zsh-autosuggestions)
+    ;;
+esac
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 

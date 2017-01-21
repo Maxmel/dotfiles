@@ -9,10 +9,12 @@
   autosave:
     enabled: true
   core:
+    autoHideMenuBar: true
     disabledPackages: [
       "vim-mode"
       "typewriter"
       "exception-reporting"
+      "minimap-highlight-selected"
     ]
     ignoredNames: [
       ".git"
@@ -36,7 +38,6 @@
     useCustomTitleBar: true
   editor:
     fontFamily: "Fantasque Sans Mono"
-    fontSize: 12
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
