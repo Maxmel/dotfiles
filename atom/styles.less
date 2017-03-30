@@ -9,35 +9,46 @@
  * http://lesscss.org
  */
 
-@font-size: 10px;
-/*
- * Examples
- * (To see them, uncomment and save)
- */
+@font-size: 12px;
+@font-family: "Helvetica Neue";
 
-// style the background color of the tree view
-.tree-view {
-  // background-color: whitesmoke;
-}
-
-// style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor {
-  // color: white;
-  // background-color: hsl(180, 24%, 12%);
-}
-
-// To style other content in the text editor's shadow DOM, use the ::shadow expression
-atom-text-editor::shadow .cursor {
-  // border-color: red;
-}
 html, body, .tab-bar .tab, .find-and-replace, .status-bar{
-  font-size: 10px;
-  font-family: "Source Sans Pro";
+  font-size: @font-size;
+  font-family: @font-family;
+  font-weight: 400;
 }
 .status-bar {
-  font-family: "Source Sans Pro";
-  height: 24px;
-  line-height: 16px;
+  font-family: @font-family;
+  font-weight: 200;
+  height: 22px;
+  padding: 0;
+  line-height: 22px;
+  vertical-align: middle;
+  > .flexbox-repaint-hack{
+    padding: 0;
+    linter-bottom-container{
+      height: 24px;
+      display: inline-block;
+      linter-bottom-tab{
+        line-height: 24px;
+        border: none;
+        height: 28px;
+      }
+    }
+    .inline-block{
+      margin-left: 5px;
+
+    }
+    .linter-status-count{
+      span{
+        height: 100%;;
+        opacity: 0.7;
+        margin: 0px;
+        border-radius: 0;
+        font-size: @font-size;
+      }
+    }
+  }
 }
 // Hide title-bar
 .title-bar{
@@ -53,14 +64,12 @@ atom-panel-container.left{
   .tab{
     height: 24px;
     line-height: 24px;
-    font-family: "Source Sans Pro";
+    font-family: @font-family;
+    font-weight: 300;
     .close-icon{
       top: 4px;
     }
   }
-}
-.icon-tools::before{
-  font-size: 12px;
 }
 .settings-view { font-size: 12px; }
 .tool-panel .tree-view li.list-nested-item{
@@ -69,12 +78,15 @@ atom-panel-container.left{
       font-size: 12px;
     }
     span{
-      font-family: "Source Sans Pro";
+      font-family: @font-family;
+      font-weight: 400;
     }
-    font-family: "Source Sans Pro";
+    font-family: @font-family;
+    font-weight: 400;
   }
   .entries .entry.list-item {
-    font-family: "Source Sans Pro";
+    font-family: @font-family;
+    font-weight: 400;
     .name{
       font-size: 12px;
     }
@@ -82,18 +94,17 @@ atom-panel-container.left{
 }
 .list-group li:not(.list-nested-item).selected, .list-tree li:not(.list-nested-item).selected, .list-group li.list-nested-item.selected > .list-item, .list-tree li.list-nested-item.selected > .list-item, .list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
   font-size: 12px;
-  font-family: "Source Sans Pro";
+  font-family: @font-family;
+  font-weight: 400;
   &:hover{
     font-size: 12px;
-    font-family: "Source Sans Pro";
+    font-family: @font-family;
+    font-weight: 400;
   }
-}
-.list-tree.has-collapsable-children .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
-    // padding-left: 12px;
 }
 
 linter-message {
-    font-size: 10px;
+    font-size: @font-size;
     line-height: 1.0;
 }
 .left:not(:empty) + .vertical{

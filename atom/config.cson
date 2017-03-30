@@ -30,7 +30,7 @@
       ".gcc-flags.json"
     ]
     packagesWithKeymapsDisabled: []
-    telemetryConsent: "limited"
+    telemetryConsent: "no"
     themes: [
       "nord-atom-ui"
       "nord-atom-syntax"
@@ -38,6 +38,7 @@
     useCustomTitleBar: true
   editor:
     fontFamily: "Fantasque Sans Mono"
+    fontSize: 11
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -49,8 +50,6 @@
     useAnimations: false
   "find-and-replace":
     closeFindPanelAfterSearch: true
-    focusEditorAfterSearch: true
-    openProjectFindResultsInRightPane: true
     scrollToResultOnLiveSearch: true
   "fuzzy-finder":
     useAlternateScoring: true
@@ -61,9 +60,14 @@
     onlyHighlightWholeWords: false
   "letter-spacing":
     "letter-spacing": 1
-  linter:
-    errorPanelHeight: 73
+  linter: {}
   "linter-less": {}
+  "linter-slim":
+    rails: true
+  "linter-ui-default":
+    panelHeight: 100
+    showPanel: true
+    statusBarPosition: "Right"
   minimap:
     plugins:
       "highlight-selected": true
@@ -73,6 +77,8 @@
   "one-dark-ui": {}
   "open-recent":
     listDirectoriesAddedToProject: true
+  pigments:
+    markerType: "native-underline"
   "platformio-ide-terminal":
     core:
       autoRunCommand: ""
@@ -80,6 +86,8 @@
       theme: "solarized-dark"
     toggles:
       autoClose: true
+  "project-find-navigation":
+    showEndOfLifeWarning: false
   "status-bar": {}
   tabs:
     enableVcsColoring: true
@@ -97,8 +105,27 @@
   "vim-mode":
     startInInsertMode: true
     useClipboardAsDefaultRegister: true
+  "vim-mode-plus":
+    automaticallyEscapeInsertModeOnActivePaneItemChange: true
+    clearHighlightSearchOnResetNormalMode: true
+    clearMultipleCursorsOnEscapeInsertMode: true
+    clearPersistentSelectionOnResetNormalMode: true
+    highlightSearch: true
+    incrementalSearch: true
+    smoothScrollOnFullScrollMotion: true
+    smoothScrollOnHalfScrollMotion: true
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+    useSmartcaseForSearchCurrentWord: true
   welcome:
     showOnStartup: false
+  zentabs:
+    maximumOpenedTabs: 10
+    neverCloseNew: true
+    neverCloseUnsaved: true
+".coffee.source":
+  editor:
+    autoIndentOnPaste: true
 ".erb.html.text":
   editor:
     preferredLineLength: 100

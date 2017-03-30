@@ -16,6 +16,7 @@ alias dbr="bundle exec rake db:reset db:fixtures:load"
 
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias nano='nvim'
+alias notif='reattach-to-user-namespace terminal-notifier -message'
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
  COMPLETION_WAITING_DOTS="true"
