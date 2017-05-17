@@ -13,6 +13,7 @@ alias rs1="bundle exec rails server"
 alias rs2="bundle exec rails server -p 3030"
 alias dbm="bundle exec rake db:migrate"
 alias dbr="bundle exec rake db:reset db:fixtures:load"
+alias ctags="`brew --prefix`/bin/ctags"
 
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias nano='nvim'

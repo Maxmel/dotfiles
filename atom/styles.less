@@ -10,7 +10,7 @@
  */
 
 @font-size: 12px;
-@font-family: "Helvetica Neue";
+@font-family: "Raleway";
 
 html, body, .tab-bar .tab, .find-and-replace, .status-bar{
   font-size: @font-size;
@@ -19,10 +19,11 @@ html, body, .tab-bar .tab, .find-and-replace, .status-bar{
 }
 .status-bar {
   font-family: @font-family;
+  font-size: 10px;
   font-weight: 200;
-  height: 22px;
+  height: 24px;
   padding: 0;
-  line-height: 22px;
+  line-height: 20px;
   vertical-align: middle;
   > .flexbox-repaint-hack{
     padding: 0;
@@ -40,27 +41,28 @@ html, body, .tab-bar .tab, .find-and-replace, .status-bar{
 
     }
     .linter-status-count{
+      border-left: 1px solid;
       span{
-        height: 100%;;
-        opacity: 0.7;
         margin: 0px;
         border-radius: 0;
-        font-size: @font-size;
+        font-size: 10px;
+        background: transparent;
+        color: rgba(216, 222, 233, 0.4) !important;
+        border-right: 1px solid;
+        font-weight: 200;
+      }
+      .highlight-warning{
+        color: #d8dee9 !important;
+        font-weight: 400;
+      }
+      .loading-spinner-tiny{
+        background-size: 13px;
       }
     }
   }
 }
-// Hide title-bar
-.title-bar{
-  display: none;
-}
-// Add margin above left column to not hide closing buttons
-atom-panel-container.left{
-  margin-top: 25px;
-}
 .tab-bar{
   height: 24px;
-  padding-left: 70px;
   .tab{
     height: 24px;
     line-height: 24px;
@@ -74,8 +76,13 @@ atom-panel-container.left{
 .settings-view { font-size: 12px; }
 .tool-panel .tree-view li.list-nested-item{
   .header.list-item{
-    .name{
+    line-height: 16px;
+    ::before{
       font-size: 12px;
+      margin-right: 2px;
+    }
+    .name{
+      font-size: 10px;
     }
     span{
       font-family: @font-family;
@@ -85,10 +92,15 @@ atom-panel-container.left{
     font-weight: 400;
   }
   .entries .entry.list-item {
+    ::before{
+      font-size: 12px;
+      margin-right: 2px;
+    }
+    line-height: 18px;
     font-family: @font-family;
     font-weight: 400;
     .name{
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 }
@@ -102,24 +114,9 @@ atom-panel-container.left{
     font-weight: 400;
   }
 }
-
-linter-message {
-    font-size: @font-size;
-    line-height: 1.0;
-}
-.left:not(:empty) + .vertical{
-  .tab-bar{
-    padding-left: 0px;
-    margin-left: -95px;
-    width: calc(~"100% + 95px");
-  }
-}
-.left:empty + .vertical{
-  .tab-bar{
-    padding-left: 70px;
-    margin-left: 0px
-  }
-}
 .tab-bar .tab.modified:not(:hover) .close-icon{
   top: 8px;
+}
+.sb-table.linter {
+  font-size: 9px;
 }

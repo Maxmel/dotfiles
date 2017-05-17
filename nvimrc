@@ -16,19 +16,20 @@ Plugin 'tomtom/tcomment_vim'
 Plugin 'bling/vim-airline'
 Plugin 'surround.vim'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'rking/ag.vim'
 " Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Yggdroot/indentLine'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'rbgrouleff/bclose.vim'
-Plugin 'morhetz/gruvbox'
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+Plugin 'pbogut/fzf-mru.vim'
+Plugin 'w0rp/ale'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,7 +56,7 @@ set linebreak                   " only wrap at breakat char
 set list
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting<F37>
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set textwidth=0
 set wrapmargin=0
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
@@ -95,8 +96,10 @@ set clipboard+=unnamedplus
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 "
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
+" FZF search buffers
+nmap <leader>t :Buffers<cr>
+
+" Open new empty buffe
 nmap <leader>T :enew<cr>
 
 " Move to the next buffer
@@ -112,8 +115,11 @@ nmap <leader>q :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+" fzf file searching
+nmap <leader>p :Files<CR>
+
 "" IndentLine
-let g:indentLine_char = '┆'
+let g:indentLine_char = '│'
 
 "" airline
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
@@ -121,20 +127,12 @@ let g:ctrlp_working_path_mode = 0
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
-"" CtrlP settings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
 "" Notes
 let g:notes_directories = ['~/Clouds/Google Drive/Notes']
 "" True Colors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " open ag.vim
-nnoremap <leader>a :Ag
+nnoremap <leader>a :Ag<CR>
 "" No use the arrow keys !
 noremap <Up> <NOP>
 noremap <Down> <NOP>

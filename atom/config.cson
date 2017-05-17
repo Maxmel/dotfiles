@@ -1,4 +1,7 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "6d82cb68-12a0-41e0-b525-6cd14686876f"
   "atom-clock": {}
   "autocomplete-plus":
     minimumWordLength: 2
@@ -9,6 +12,7 @@
   autosave:
     enabled: true
   core:
+    allowPendingPaneItems: false
     autoHideMenuBar: true
     disabledPackages: [
       "vim-mode"
@@ -35,10 +39,10 @@
       "nord-atom-ui"
       "nord-atom-syntax"
     ]
-    useCustomTitleBar: true
+    titleBar: "hidden"
   editor:
     fontFamily: "Fantasque Sans Mono"
-    fontSize: 11
+    fontSize: 13
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -53,6 +57,8 @@
     scrollToResultOnLiveSearch: true
   "fuzzy-finder":
     useAlternateScoring: true
+  "git-control":
+    showGitFlowButton: false
   "git-diff":
     showIconsInEditorGutter: true
   "highlight-selected":
@@ -65,9 +71,11 @@
   "linter-slim":
     rails: true
   "linter-ui-default":
-    panelHeight: 100
+    panelHeight: 169
     showPanel: true
+    statusBarClickBehavior: "Jump to next issue"
     statusBarPosition: "Right"
+    statusBarRepresents: "Entire Project"
   minimap:
     plugins:
       "highlight-selected": true
