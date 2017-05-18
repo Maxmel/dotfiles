@@ -30,6 +30,7 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'pbogut/fzf-mru.vim'
 Plugin 'w0rp/ale'
+Plugin 'tpope/vim-fugitive'
 "
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
