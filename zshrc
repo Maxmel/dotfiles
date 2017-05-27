@@ -54,5 +54,10 @@ export VISUAL='nvim'
 # if [[ `uname` == 'Darwin' ]]; then . `brew --prefix`/etc/profile.d/z.sh; fi
 # fasd
 eval "$(fasd --init auto)"
+# The FUCK
+eval "$(thefuck --alias)"
 #set TERM
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+
+export NVM_DIR="/home/max/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
