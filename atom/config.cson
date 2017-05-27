@@ -38,6 +38,7 @@
     useCustomTitleBar: true
   editor:
     fontFamily: "Fantasque Sans Mono"
+    fontSize: 13
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -65,6 +66,7 @@
     errorPanelHeight: 73
   "linter-less": {}
   minimap:
+    absoluteMode: true
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
@@ -94,8 +96,14 @@
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
   "tree-view-open-files": {}
-  "vim-mode":
-    startInInsertMode: true
+  "vim-mode-plus":
+    clearHighlightSearchOnResetNormalMode: true
+    clearMultipleCursorsOnEscapeInsertMode: true
+    highlightSearch: true
+    incrementalSearch: true
+    showHoverSearchCounter: true
+    smoothScrollOnFullScrollMotion: true
+    smoothScrollOnHalfScrollMotion: true
     useClipboardAsDefaultRegister: true
   welcome:
     showOnStartup: false
