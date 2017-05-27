@@ -3,6 +3,7 @@
     general:
       _analyticsUserId: "6d82cb68-12a0-41e0-b525-6cd14686876f"
   "atom-clock": {}
+  "atom-ctags": {}
   "autocomplete-plus":
     minimumWordLength: 2
   "autohide-tree-view":
@@ -19,11 +20,12 @@
       "typewriter"
       "exception-reporting"
       "minimap-highlight-selected"
+      "symbols-view"
     ]
+    excludeVcsIgnoredPaths: false
     ignoredNames: [
       ".git"
       ".bundle"
-      ".gitignore"
       ".gitattributes"
       ".DS_Store"
       ".agignore"
@@ -32,6 +34,10 @@
       ".piolibdeps"
       ".clang_complete"
       ".gcc-flags.json"
+      ".tag"
+      "tag"
+      ".tags"
+      "tags"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
@@ -42,7 +48,7 @@
     titleBar: "hidden"
   editor:
     fontFamily: "Fantasque Sans Mono"
-    fontSize: 13
+    fontSize: 12
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -67,16 +73,19 @@
   "letter-spacing":
     "letter-spacing": 1
   linter: {}
+  "linter-eslint":
+    lintHtmlFiles: true
   "linter-less": {}
   "linter-slim":
     rails: true
   "linter-ui-default":
-    panelHeight: 169
-    showPanel: true
-    statusBarClickBehavior: "Jump to next issue"
-    statusBarPosition: "Right"
+    panelHeight: 145
     statusBarRepresents: "Entire Project"
+  "markdown-preview": {}
+  "markdown-preview-plus":
+    useGitHubStyle: true
   minimap:
+    absoluteMode: true
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0

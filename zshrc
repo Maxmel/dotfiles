@@ -11,6 +11,7 @@ alias railspry="pry -r ./config/environment"
 alias gs="git status"
 alias rs1="bundle exec rails server"
 alias rs2="bundle exec rails server -p 3030"
+alias rco="bundle exec rails console"
 alias dbm="bundle exec rake db:migrate"
 alias dbr="bundle exec rake db:reset db:fixtures:load"
 alias ctags="`brew --prefix`/bin/ctags"
@@ -58,3 +59,10 @@ export VISUAL='nvim'
 eval "$(fasd --init auto)"
 #set TERM
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+setopt hist_ignore_all_dups
+export SAVEHIST=100000
+export HISTSIZE=100000
+export FZF_DEFAULT_COMMAND='ag -g ""'
