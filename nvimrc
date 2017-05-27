@@ -1,51 +1,30 @@
-set shell=/bin/sh
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.local/share/nvim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'bling/vim-airline'
-Plugin 'surround.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ervandew/supertab'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rking/ag.vim'
-" Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Yggdroot/indentLine'
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
-Plugin 'francoiscabrol/ranger.vim'
-Plugin 'rbgrouleff/bclose.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'scrooloose/nerdtree'
-"
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+Plug 'tomtom/tcomment_vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-surround'
+Plug 'sheerun/vim-polyglot'
+Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'pbogut/fzf-mru.vim'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-startify'
+Plug 'justinmk/vim-sneak'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-syntax enable
+call plug#end()
+
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 
@@ -55,7 +34,7 @@ set linebreak                   " only wrap at breakat char
 set list
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting<F37>
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set textwidth=0
 set wrapmargin=0
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
@@ -95,8 +74,10 @@ set clipboard+=unnamedplus
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 "
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
+" FZF search buffers
+nmap <leader>t :Buffers<cr>
+
+" Open new empty buffe
 nmap <leader>T :enew<cr>
 
 " Move to the next buffer
@@ -112,29 +93,43 @@ nmap <leader>q :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+" fzf file searching
+nmap <leader>p :Files<CR>
+
 "" IndentLine
-let g:indentLine_char = '┆'
+let g:indentLine_char = '│'
 
 "" airline
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:ctrlp_working_path_mode = 0
+let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_right_sep=' '
+let g:airline_left_sep=' '
+let g:airline_right_alt_sep='|'
+let g:airline_left_alt_sep='|'
+let g:airline#extensions#tabline#tab_nr_type = 1 " splits and tab number
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
-
-"" CtrlP settings
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 "" Notes
 let g:notes_directories = ['~/Clouds/Google Drive/Notes']
 "" True Colors
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " open ag.vim
-nnoremap <leader>a :Ag
+nnoremap <leader>a :Ag<CR>
 "" No use the arrow keys !
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -153,3 +148,20 @@ imap <c-s> <Esc>:w<CR>i
 if exists('&inccommand')
   set inccommand=split
 endif
+
+let g:terminal_color_0 = '#3B4252'
+let g:terminal_color_1 = '#BF616A'
+let g:terminal_color_2 = '#A3BE8C'
+let g:terminal_color_3 = '#EBCB8B'
+let g:terminal_color_4 = '#81A1C1'
+let g:terminal_color_5 = '#B48EAD'
+let g:terminal_color_6 = '#88C0D0'
+let g:terminal_color_7 = '#E5E9F0'
+let g:terminal_color_8 = '#4C566A'
+let g:terminal_color_9 = '#BF616A'
+let g:terminal_color_10 = '#A3BE8C'
+let g:terminal_color_11 = '#EBCB8B'
+let g:terminal_color_12 = '#81A1C1'
+let g:terminal_color_13 = '#B48EAD'
+let g:terminal_color_14 = '#8FBCBB'
+let g:terminal_color_15 = '#ECEFF4'

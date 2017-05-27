@@ -11,11 +11,14 @@ alias railspry="pry -r ./config/environment"
 alias gs="git status"
 alias rs1="bundle exec rails server"
 alias rs2="bundle exec rails server -p 3030"
+alias rco="bundle exec rails console"
 alias dbm="bundle exec rake db:migrate"
 alias dbr="bundle exec rake db:reset db:fixtures:load"
+alias ctags="`brew --prefix`/bin/ctags"
 
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias nano='nvim'
+alias notif='reattach-to-user-namespace terminal-notifier -message'
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
  COMPLETION_WAITING_DOTS="true"
@@ -61,3 +64,9 @@ if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 
 export NVM_DIR="/home/max/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+setopt hist_ignore_all_dups
+export SAVEHIST=100000
+export HISTSIZE=100000
+export FZF_DEFAULT_COMMAND='ag -g ""'
