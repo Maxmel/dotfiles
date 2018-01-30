@@ -1,175 +1,174 @@
-/*
- *
- * MaxMel
- *
- */
-
-@font-size: 10px;
-@font-family: default;
-
-html, body, .tab-bar .tab, .find-and-replace, .status-bar{
-  font-size: @font-size;
-  font-family: @font-family;
-}
-atom-text-editor{
-  line-height: 1.2;
-}
-.status-bar {
-  font-family: @font-family;
-  font-size: @font-size;
-  height: 20px;
-  line-height: 20px;
-  vertical-align: middle;
-  > .flexbox-repaint-hack{
-    padding: 0;
-    .text-warning{
-      font-size: @font-size;
-    }
-    .status-bar-right{
-      margin-top: -2px;
-    }
-    .status-bar-left{
-      margin-left: 5px;
-    }
-    .linter-status-count{
-      margin-top: -2px;
-    }
-    .loading-spinner-tiny{
-      background-size: 13px;
-      width: 13px;
-    }
-  }
-}
-.tab-bar{
-  height: 20px;
-  width: auto;
-  .tab{
-    .icon:before{
-      font-size: 12px;
-    }
-    max-width: 250px;
-    &.modified:not(:hover){
-      .close-icon{
-        top: 6px !important;
-      }
-    }
-    width: auto;
-    &.active:not(:only-child){
-      width: auto;
-      border-bottom: 1px solid rgba(256,256,256,0.3);
-    }
-    height: 20px;
-    line-height: 20px;
-    font-family: @font-family;
-    .close-icon{
-      top: 2px;
-      height: 12px;
-      width: 12px;
-      transform: scale(1);
-      opacity: 0.8;
-    }
-  }
-}
-.settings-view { font-size: 12px; }
-.tool-panel .tree-view li.list-nested-item{
-  .header.list-item{
-    line-height: 16px;
-    ::before{
-      font-size: @font-size;
-      margin-right: 2px;
-    }
-    .name{
-      font-size: @font-size;
-    }
-    span{
-      font-family: @font-family;
-    }
-    font-family: @font-family;
-  }
-  .entries .entry.list-item {
-    ::before{
-      font-size: 12px;
-      margin-right: 2px;
-    }
-    line-height: 18px;
-    font-family: @font-family;
-    .name{
-      font-size: @font-size;
-    }
-  }
-}
-.list-tree{
-  padding: 0px !important;
-}
-.list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
-    line-height: 18px;
-    text-wrap: none;
-    white-space: nowrap;
-}
-.list-group .selected::before, .list-tree .selected::before {
-    height: 18px;
-}
-.list-group .icon::before, .list-tree .icon::before {
-    font-size: 12px;
-    width: 12px;
-    height: 12px;
-}
-.list-tree.has-collapsable-children .list-nested-item > .list-item::before, .list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before  {
-    top: 0px;
-    margin-right: 5px;
-    font-size: 12px;
-    font-family: "FontAwesome";
-}
-.list-tree.has-collapsable-children .list-nested-item > .list-item::before{
-  content: "\f07b";
-}
-.list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before{
-  content: "\f114";
-}
-.list-tree.has-collapsable-children .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
-    padding-left: 10px;
-}
-.list-tree.has-collapsable-children li.list-item {
-    margin-left: 0px;
-}
-.list-tree .icon-file-directory::before{
-  content: "";
-  width: 0px;
-  margin: 0;
-}
-.list-group li:not(.list-nested-item).selected, .list-tree li:not(.list-nested-item).selected, .list-group li.list-nested-item.selected > .list-item, .list-tree li.list-nested-item.selected > .list-item, .list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
-  font-size: @font-size;
-  font-family: @font-family;
-  &:hover{
-    font-size: @font-size;
-    font-family: @font-family;
-  }
-}
-.sb-table.linter {
-  font-size: @font-size;
-}
-
-atom-panel.modal, .overlay {
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4) !important;
-    padding: 5px 10px;
-    width: 1080px;
-    margin-left: -540px;
-}
-atom-panel.modal ul.list-group, .overlay ul.list-group, atom-panel.modal .select-list ol.list-group, .overlay .select-list ol.list-group, atom-panel.modal.select-list ol.list-group, .overlay.select-list ol.list-group {
-  margin: 0 -10px -5px;
-}
-atom-panel.modal atom-text-editor[mini], .overlay atom-text-editor[mini], atom-panel.modal atom-text-editor.mini, .overlay atom-text-editor.mini {
-  font-weight: 200;
-  font-size: 14px;
-  line-height: 18px;
-  padding: 0 10px 5px 30px;
-  margin: 0 -10px;
-}
-atom-panel.modal > .fuzzy-finder > atom-text-editor[mini]:before {
-  content: "\f02e";
-  font-size: 12px;
-}
-
-// .syntax--meta {
-//     color: #323232;
+// /*
+//  *
+//  * MaxMel
+//  *
+//  */
+//
+// @font-size: 10px;
+// @font-family: default;
+//
+// html, body, .tab-bar .tab, .find-and-replace, .status-bar{
+//   font-size: @font-size;
+//   font-family: @font-family;
 // }
+// atom-text-editor{
+//   line-height: 1.2;
+// }
+// .status-bar {
+//   font-family: @font-family;
+//   font-size: @font-size;
+//   height: 20px;
+//   line-height: 20px;
+//   vertical-align: middle;
+//   > .flexbox-repaint-hack{
+//     padding: 0;
+//     .text-warning{
+//       font-size: @font-size;
+//     }
+//     .status-bar-right{
+//       margin-top: -2px;
+//     }
+//     .status-bar-left{
+//       margin-left: 5px;
+//     }
+//     .linter-status-count{
+//       margin-top: -2px;
+//     }
+//     .loading-spinner-tiny{
+//       background-size: 13px;
+//       width: 13px;
+//     }
+//   }
+// }
+// .tab-bar{
+//   height: 20px;
+//   .tab{
+//     .icon:before{
+//       font-size: 12px;
+//     }
+//     max-width: 250px;
+//     &.modified:not(:hover){
+//       .close-icon{
+//         top: 6px !important;
+//       }
+//     }
+//     width: auto;
+//     &.active:not(:only-child){
+//       width: auto;
+//       border-bottom: 1px solid rgba(256,256,256,0.3);
+//     }
+//     height: 20px;
+//     line-height: 20px;
+//     font-family: @font-family;
+//     .close-icon{
+//       top: 2px;
+//       height: 12px;
+//       width: 12px;
+//       transform: scale(1);
+//       opacity: 0.8;
+//     }
+//   }
+// }
+// .settings-view { font-size: 12px; }
+// .tool-panel .tree-view li.list-nested-item{
+//   .header.list-item{
+//     line-height: 16px;
+//     ::before{
+//       font-size: @font-size;
+//       margin-right: 2px;
+//     }
+//     .name{
+//       font-size: @font-size;
+//     }
+//     span{
+//       font-family: @font-family;
+//     }
+//     font-family: @font-family;
+//   }
+//   .entries .entry.list-item {
+//     ::before{
+//       font-size: 12px;
+//       margin-right: 2px;
+//     }
+//     line-height: 18px;
+//     font-family: @font-family;
+//     .name{
+//       font-size: @font-size;
+//     }
+//   }
+// }
+// .list-tree{
+//   padding: 0px !important;
+// }
+// .list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+//     line-height: 18px;
+//     text-wrap: none;
+//     white-space: nowrap;
+// }
+// .list-group .selected::before, .list-tree .selected::before {
+//     height: 18px;
+// }
+// .list-group .icon::before, .list-tree .icon::before {
+//     font-size: 12px;
+//     width: 12px;
+//     height: 12px;
+// }
+// .list-tree.has-collapsable-children .list-nested-item > .list-item::before, .list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before  {
+//     top: 0px;
+//     margin-right: 5px;
+//     font-size: 12px;
+//     font-family: "FontAwesome";
+// }
+// .list-tree.has-collapsable-children .list-nested-item > .list-item::before{
+//   content: "\f07b";
+// }
+// .list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before{
+//   content: "\f114";
+// }
+// .list-tree.has-collapsable-children .list-nested-item > .list-tree > li, .list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+//     padding-left: 10px;
+// }
+// .list-tree.has-collapsable-children li.list-item {
+//     margin-left: 0px;
+// }
+// .list-tree .icon-file-directory::before{
+//   content: "";
+//   width: 0px;
+//   margin: 0;
+// }
+// .list-group li:not(.list-nested-item).selected, .list-tree li:not(.list-nested-item).selected, .list-group li.list-nested-item.selected > .list-item, .list-tree li.list-nested-item.selected > .list-item, .list-group li:not(.list-nested-item), .list-tree li:not(.list-nested-item), .list-group li.list-nested-item > .list-item, .list-tree li.list-nested-item > .list-item {
+//   font-size: @font-size;
+//   font-family: @font-family;
+//   &:hover{
+//     font-size: @font-size;
+//     font-family: @font-family;
+//   }
+// }
+// .sb-table.linter {
+//   font-size: @font-size;
+// }
+//
+// atom-panel.modal, .overlay {
+//     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4) !important;
+//     padding: 5px 10px;
+//     width: 1080px;
+//     margin-left: -540px;
+// }
+// atom-panel.modal ul.list-group, .overlay ul.list-group, atom-panel.modal .select-list ol.list-group, .overlay .select-list ol.list-group, atom-panel.modal.select-list ol.list-group, .overlay.select-list ol.list-group {
+//   margin: 0 -10px -5px;
+// }
+// atom-panel.modal atom-text-editor[mini], .overlay atom-text-editor[mini], atom-panel.modal atom-text-editor.mini, .overlay atom-text-editor.mini {
+//   font-weight: 200;
+//   font-size: 14px;
+//   line-height: 18px;
+//   padding: 0 10px 5px 30px;
+//   margin: 0 -10px;
+// }
+// atom-panel.modal > .fuzzy-finder > atom-text-editor[mini]:before {
+//   content: "\f02e";
+//   font-size: 12px;
+// }
+//
+// // .syntax--meta {
+// //     color: #323232;
+// // }

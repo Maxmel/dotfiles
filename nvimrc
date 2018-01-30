@@ -10,7 +10,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 Plug 'xolox/vim-notes'
 Plug 'xolox/vim-misc'
-Plug 'francoiscabrol/ranger.vim'
+" Plug 'francoiscabrol/ranger.vim'
+Plug 'vifm/neovim-vifm'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'scrooloose/nerdtree'
@@ -67,6 +68,7 @@ set noswapfile
 
 set clipboard+=unnamedplus
 
+set mouse=a
 " let mapleader=","
 
 "" Buffers
@@ -123,6 +125,7 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
+let g:airline#extensions#tabline#show_tabs = 0
 
 "" Notes
 let g:notes_directories = ['~/Clouds/Google Drive/Notes']
@@ -165,3 +168,20 @@ let g:terminal_color_12 = '#81A1C1'
 let g:terminal_color_13 = '#B48EAD'
 let g:terminal_color_14 = '#8FBCBB'
 let g:terminal_color_15 = '#ECEFF4'
+
+"use alt + j,k,hl to navigate windows from any mode
+:tnoremap <A-h> <C-\><C-N><C-w>h
+:tnoremap <A-j> <C-\><C-N><C-w>j
+:tnoremap <A-k> <C-\><C-N><C-w>k
+:tnoremap <A-l> <C-\><C-N><C-w>l
+:inoremap <A-h> <C-\><C-N><C-w>h
+:inoremap <A-j> <C-\><C-N><C-w>j
+:inoremap <A-k> <C-\><C-N><C-w>k
+:inoremap <A-l> <C-\><C-N><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
+
+" Exit terminal mode with esc
+:tnoremap <Esc> <C-\><C-n>

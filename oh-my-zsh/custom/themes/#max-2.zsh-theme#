@@ -1,15 +1,15 @@
-local return_code="%(?..%F{196}%? ‚Üµ%F{4})"
+qlocal return_code="%(?..%F{196}%? úÙ˜µ%{$reset_color%})"
 
 local user='$(show_user)'
 local host='$(show_host)'
-local dir='‚îÄ‚ïº[%F{4}%~%F{8}]‚ïæ‚îÄ'
+local dir='úÚ††úÚ°º[%F{4}%~%F{8}]úÚ°æúÚ††'
 local git='$(show_git)'
 local ruby='$(show_ruby)'
-local time='‚îÄ‚ïº[%F{14}%*%F{8}]'
+local time='úÚ††úÚ°º[%F{14}%*%F{8}]'
 
 RPROMPT="$return_code%{$reset_color%}"
-PROMPT="%F{8}‚îå‚îÄ$user$host$dir$git$ruby$time
-‚îî‚îÄ‚îÄ‚ïº "
+PROMPT="%F{8}úÚ†¨úÚ††$user$host$dir$git$ruby$time
+úÚ†¥úÚ††úÚ††úÚ°º "
 # Check if command exists in $PATH
 _exists() {
   command -v $1 > /dev/null 2>&1
@@ -27,25 +27,25 @@ show_user() {
     else
       user_color=2
     fi
-    echo -n "‚îÄ‚ïº[%F{${user_color}}%n%F{8}]‚ïæ‚îÄ"
+    echo -n "úÚ††úÚ°º[%F{${user_color}}%n%F{8}]úÚ°æúÚ††"
   fi
 }
 show_host() {
   [[ -n $SSH_CONNECTION ]] || return
-  echo -n "‚îÄ‚ïº[%F{4}%m%F{8}]‚ïæ‚îÄ"
+  echo -n "úÚ††úÚ°º[%F{4}%m%F{8}]úÚ°æúÚ††"
 }
 show_git_status() {
   _is_git || return
   ZSH_THEME_GIT_PROMPT_UNTRACKED='?'
   ZSH_THEME_GIT_PROMPT_ADDED="+"
   ZSH_THEME_GIT_PROMPT_MODIFIED="!"
-  ZSH_THEME_GIT_PROMPT_RENAMED="¬ª"
-  ZSH_THEME_GIT_PROMPT_DELETED="‚úò"
+  ZSH_THEME_GIT_PROMPT_RENAMED="Åª"
+  ZSH_THEME_GIT_PROMPT_DELETED="úÚ•ÿ"
   ZSH_THEME_GIT_PROMPT_STASHED="$"
   ZSH_THEME_GIT_PROMPT_UNMERGED="="
-  ZSH_THEME_GIT_PROMPT_AHEAD="‚á°"
-  ZSH_THEME_GIT_PROMPT_BEHIND="‚á£"
-  ZSH_THEME_GIT_PROMPT_DIVERGED="‚áï"
+  ZSH_THEME_GIT_PROMPT_AHEAD="úÙ˜·"
+  ZSH_THEME_GIT_PROMPT_BEHIND="úÙ˜„"
+  ZSH_THEME_GIT_PROMPT_DIVERGED="úÙ˜’"
   local git_status="$(git_prompt_status)"
 
   if [[ -n $git_status ]]; then
@@ -54,7 +54,7 @@ show_git_status() {
 }
 show_git() {
   _is_git || return
-  echo -n "‚îÄ‚ïº[%F{3}$(git_current_branch)$(show_git_status)%F{8}]‚ïæ‚îÄ"
+  echo -n "úÚ††úÚ°º[%F{3}$(git_current_branch)$(show_git_status)%F{8}]úÚ°æúÚ††"
 }
 # RUBY
 # Show current version of Ruby
@@ -79,5 +79,5 @@ show_ruby() {
   # Add 'v' before ruby version that starts with a number
   [[ "${ruby_version}" =~ ^[0-9].+$ ]] && ruby_version="v${ruby_version}"
 
-  echo -n "‚îÄ‚ïº[%F{9}${ruby_version}%F{8}]‚ïæ‚îÄ"
+  echo -n "úÚ††úÚ°º[%F{9}${ruby_version}%F{8}]úÚ°æúÚ††"
 }

@@ -4,6 +4,11 @@
       _analyticsUserId: "6d82cb68-12a0-41e0-b525-6cd14686876f"
   "atom-clock": {}
   "atom-ctags": {}
+  "atom-ide-ui":
+    hyperclick:
+      darwinTriggerKeys: "ctrlKey,altKey"
+  "atom-package-deps":
+    ignored: []
   "autocomplete-plus":
     minimumWordLength: 2
   "autohide-tree-view":
@@ -13,16 +18,12 @@
   autosave:
     enabled: true
   core:
-    allowPendingPaneItems: false
     autoHideMenuBar: true
+    closeDeletedFileTabs: true
     disabledPackages: [
-      "vim-mode"
-      "typewriter"
       "exception-reporting"
-      "minimap-highlight-selected"
       "symbols-view"
     ]
-    excludeVcsIgnoredPaths: false
     ignoredNames: [
       ".git"
       ".bundle"
@@ -38,6 +39,8 @@
       "tag"
       ".tags"
       "tags"
+      "node_modules/"
+      "log/"
     ]
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
@@ -48,7 +51,7 @@
     titleBar: "hidden"
   editor:
     fontFamily: "Fantasque Sans Mono"
-    fontSize: 12
+    fontSize: 16
     invisibles: {}
     preferredLineLength: 100
     scrollPastEnd: true
@@ -79,13 +82,12 @@
   "linter-slim":
     rails: true
   "linter-ui-default":
-    panelHeight: 145
+    panelHeight: 300
     statusBarRepresents: "Entire Project"
   "markdown-preview": {}
   "markdown-preview-plus":
     useGitHubStyle: true
   minimap:
-    absoluteMode: true
     plugins:
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
