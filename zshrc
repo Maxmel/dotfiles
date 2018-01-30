@@ -60,10 +60,13 @@ export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
 
 # fasd
 eval "$(fasd --init auto)"
-
+# The FUCK
+eval "$(thefuck --alias)"
 #set TERM
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 
+export NVM_DIR="/home/max/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 setopt hist_ignore_all_dups

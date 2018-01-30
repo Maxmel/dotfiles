@@ -121,8 +121,14 @@
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true
   "tree-view-open-files": {}
-  "vim-mode":
-    startInInsertMode: true
+  "vim-mode-plus":
+    clearHighlightSearchOnResetNormalMode: true
+    clearMultipleCursorsOnEscapeInsertMode: true
+    highlightSearch: true
+    incrementalSearch: true
+    showHoverSearchCounter: true
+    smoothScrollOnFullScrollMotion: true
+    smoothScrollOnHalfScrollMotion: true
     useClipboardAsDefaultRegister: true
   "vim-mode-plus":
     automaticallyEscapeInsertModeOnActivePaneItemChange: true
