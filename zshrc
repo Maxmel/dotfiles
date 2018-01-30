@@ -14,7 +14,6 @@ alias rs2="bundle exec rails server -p 3030"
 alias rco="bundle exec rails console"
 alias dbm="bundle exec rake db:migrate"
 alias dbr="bundle exec rake db:reset db:fixtures:load"
-alias ctags="`brew --prefix`/bin/ctags"
 
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias nano='nvim'
@@ -31,6 +30,7 @@ case "${OSTYPE}" in
     plugins=(git bundler gem rails ruby colored-man colorize cp bower heroku postgres node npm rake rvm zsh-syntax-highlighting tmux thefuck zsh-autosuggestions)
     ;;
   darwin*)
+    alias ctags="`brew --prefix`/bin/ctags"
     plugins=(git brew bundler gem rails ruby colored-man colorize cp bower heroku postgres node npm osx rake rvm zsh-syntax-highlighting tmux thefuck zsh-autosuggestions)
     ;;
 esac
@@ -70,3 +70,4 @@ setopt hist_ignore_all_dups
 export SAVEHIST=100000
 export HISTSIZE=100000
 export FZF_DEFAULT_COMMAND='ag -g ""'
+export QT_QPA_PLATFORMTHEME=qt5ct
