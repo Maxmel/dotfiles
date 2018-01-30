@@ -19,6 +19,8 @@ alias ctags="`brew --prefix`/bin/ctags"
 alias v='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias nano='nvim'
 alias notif='reattach-to-user-namespace terminal-notifier -message'
+alias cat="pygmentize -g"
+alias gls="gls --color=always "
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
  COMPLETION_WAITING_DOTS="true"
@@ -41,22 +43,24 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="$PATH:$HOME/.rvm/gems/ruby-1.9.3-p327/bin:$HOME/.rvm/gems/ruby-1.9.3-p327@global/bin:$HOME/.rvm/rubies/ruby-1.9.3-p327/bin:$HOME/.rvm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.rvm/gems/ruby-2.4.1/bin:$HOME/.rvm/gems/ruby-2.4.1@global/bin:$HOME/.rvm/rubies/ruby-2.4.1/bin:$HOME/.rvm/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/curl/bin:$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+test -e ~/.dircolors && \
+  eval `dircolors -b ~/.dircolors`
+
+alias ls="ls --color=always" 
+alias grep="grep --color=always"
+alias egrep="egrep --color=always" 
+
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
 
-# z 
-# if [[ `uname` == 'Darwin' ]]; then . `brew --prefix`/etc/profile.d/z.sh; fi
 # fasd
 eval "$(fasd --init auto)"
+
 #set TERM
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 
