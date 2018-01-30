@@ -17,6 +17,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show drun 
+bindsym Ctrl+space exec rofi -show drun 
 
 # change focus
 bindsym $mod+j focus left
@@ -72,7 +73,7 @@ bindsym $mod+a focus parent
 bindsym $mod+1 workspace 1:terms
 bindsym $mod+2 workspace 2:web
 bindsym $mod+3 workspace 3:music
-bindsym $mod+4 workspace 4
+bindsym $mod+4 workspace 4:dev
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
