@@ -64,6 +64,9 @@ values."
    dotspacemacs-additional-packages
    '(
      vue-mode
+     lsp-mode
+     lsp-vue
+     company-lsp
      ws-butler
      nord-theme
      all-the-icons
@@ -315,6 +318,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   ;;(setq default-frame-alist '((undecorated . t)))
   (setq default-frame-alist '((ns-transparent-titlebar . t) (ns-appearance . 'nil)))
+
   ;; ---------------------------
   ;; --- MOUSE ENTEGRATION -----
   ;; ---------------------------
@@ -337,6 +341,17 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (require 'vue-mode)
+    (add-to-list 'vue-mode-hook #'smartparens-mode)
+
+  (require 'lsp-mode)
+    (require 'lsp-vue)
+    (add-hook 'vue-mode-hook #'lsp-vue-mmm-enable)
+    (with-eval-after-load 'lsp-mode
+      (require 'lsp-flycheck))
+
+  (require 'company-lsp)
+    (push 'company-lsp company-backends)
   (spacemacs/toggle-indent-guide-globally-on)
   (spacemacs/toggle-whitespace-globally-on)
   ;;(setq default-frame-alist '((undecorated . t)))
@@ -356,13 +371,11 @@ you should place your code here."
  '(js-indent-level 2)
  '(neo-theme 'icons)
  '(package-selected-packages
-   '(yaml-mode font-lock+ all-the-icons xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help vue-mode edit-indirect ssass-mode vue-html-mode mmm-mode web-beautify reveal-in-osx-finder projectile-rails inflections pbcopy osx-trash osx-dictionary livid-mode skewer-mode simple-httpd launchctl json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc feature-mode company-tern dash-functional tern coffee-mode unfill smeargle orgit mwim magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit ghub let-alist with-editor company-web web-completion-data company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode nord-theme ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))
+   '(lsp-vue company-lsp lsp-mode yaml-mode font-lock+ all-the-icons xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help vue-mode edit-indirect ssass-mode vue-html-mode mmm-mode web-beautify reveal-in-osx-finder projectile-rails inflections pbcopy osx-trash osx-dictionary livid-mode skewer-mode simple-httpd launchctl json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc feature-mode company-tern dash-functional tern coffee-mode unfill smeargle orgit mwim magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit ghub let-alist with-editor company-web web-completion-data company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode nord-theme ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))
  '(standard-indent 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;;'(default ((((class color) (min-colors 89)) (:foreground "#D8DEE9" :background "#2E3440" :family "Source Code Pro" :foundry "nil" :slant normal :weight light :height 130 :width normal))))
- ;;'(whitespace-space ((t (:foreground "#4c566a"))))
- )
+ '(default ((((class color) (min-colors 89)) (:foreground "#D8DEE9" :background "#2E3440")))))
