@@ -1,0 +1,235 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* #TabsToolbar { visibility: collapse !important; } */
+/* Remove window decorations (Close, Minimize, Fullscreen) */
+#titlebar { display: none !important; }
+#TabsToolbar .titlebar-placeholder { display: none !important; }
+/* Minimize sidebar header to a light blue stripe (except Bookmarks, History, Sync'd Tabs); appears normally on hover */
+#sidebar-header:not(:hover) {
+  max-height: 3px !important;
+  min-height: 3px !important;
+  padding: 0 !important;
+  background-color: #3B4252 !important;
+  opacity: 0.5 !important;
+}
+#sidebar-header{
+  background-color: #3B4252 !important;
+}
+#sidebar-header:not(:hover) #sidebar-switcher-target {
+  /* BAD NEWS: display: none !important; */
+  opacity: 0 !important;
+}
+
+/* Color theme */
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+  /* Browser colors */
+  --ui-basecolor: var(--nord1);
+  --ui-background: var(--nord0);
+  --ui-darkcolor: var(--nord0);
+  --ui-accent: var(--nord2);
+  --ui-text-color: var(--nord4);
+  --ui-text-light-color: var(--nord5);
+  --tab-selection-background-color: var(--nord0) !important;
+  --tab-hover-background-color: #45545e !important;
+  --chrome-background-color: var(--nord0) !important; /* Includes tabstrip background */
+  --chrome-secondary-background-color: var(--nord0) !important; /* Includes toolbar, urlbar */
+  --url-and-searchbar-background-color: var(--nord0) !important;
+  --chrome-selection-background-color: var(--nord2) !important;
+  --chrome-nav-bar-controls-border-color: rgba(255, 255, 255, 0) !important; /* Urlbar border */
+  /* DevTools colors */
+  --theme-tab-toolbar-background: var(--nord0) !important;
+  --theme-toolbar-background: var(--nord0) !important;
+  --theme-sidebar-background: var(--nord0) !important;
+  --theme-body-background: var(--nord1) !important;
+  --theme-toolbar-color: var(--nord4) !important;
+  --theme-body-color: var(--nord4) !important;
+  --theme-body-color-alt: var(--nord5) !important;
+  --theme-body-color-inactive: var(--nord4) !important;
+
+  --tab-min-height: 25px !important;
+  --lwt-accent-color: var(--nord0) !important;
+}
+
+/* Make toolbar icons smaller */
+.toolbarbutton-icon {
+  width: 23px !important;
+}
+
+/* URL Bar */
+#urlbar{
+  font-size: 1em !important;
+  border-color: var(--nord0) !important;
+
+}
+
+/* Responsive tab tweaks */
+.scrollbutton-down .toolbarbutton-icon,
+.scrollbutton-up .toolbarbutton-icon {
+  height: 16px !important;
+}
+
+.scrollbutton-down .toolbarbutton-icon,
+.scrollbutton-up .toolbarbutton-icon {
+  width: 12px !important;
+}
+
+/* Make identity icon smaller */
+#identity-icon,
+#tracking-protection-icon,
+#connection-icon,
+.notification-anchor-icon,
+#blocked-permissions-container > .blocked-permission-icon,
+#extension-icon {
+  width: 14px !important;
+  height: 14px !important;
+  margin-top: 1px !important;
+}
+
+/* Make urlbar icon smaller */
+[uidensity="compact"]:root .urlbar-icon,
+.dropmarker-icon {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Make close icons smaller */
+.close-icon > .button-icon,
+.close-icon > .button-box > .button-icon,
+.close-icon > .toolbarbutton-icon {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Remove top border */
+#browser-panel {
+  margin-top: -2px !important;
+}
+
+/* Move tabs to bottom */
+#TabsToolbar {
+  -moz-box-ordinal-group: 100;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Bookmarks bar under address bar */
+#PersonalToolbar {
+  -moz-box-ordinal-group: 99 !important;
+}
+
+/* Remove space before first tab */
+.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
+  -moz-padding-end: 0 !important;
+  -moz-padding-start: 0 !important;
+}
+
+/* Remove the menu button */
+#PanelUI-menu-button {
+  display: none !important;
+}
+
+/* Consistent styles for tabs on bottom */
+.tabbrowser-tab[usercontextid] .tab-line {
+  background-color: var(--identity-tab-color) !important;
+}
+
+/* New tab button custom shape */
+.tabs-newtab-button {
+  background: none !important;
+  border: 1px transparent !important;
+  margin-left: -1px !important;
+  width: 24px !important;
+  opacity: .3 !important;
+}
+
+/* Tab related */
+.tabs-newtab-button:hover {
+  opacity: 1 !important;
+}
+
+.tabbrowser-tab {
+  margin-top: 0px !important;
+  color: var(--nord5) !important;
+
+  /* Remove borders from tabs */
+  -moz-box-align: start !important;
+}
+
+.tabbrowser-tab .tab-line {
+  margin-top: 22px !important;
+  background-color: transparent !important;
+}
+
+#tabbrowser-tabs {
+  margin-top: 0px !important;
+  position: relative !important;
+  background: var(--nord1);
+}
+
+#TabsToolbar {
+  height: 25px !important;
+}
+
+/* Selected tab tweaks */
+tab[selected] {
+  color: var(--nord5) !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
+/* Remove space from the left (Mac OS X) */
+hbox.titlebar-placeholder {
+  display: none !important;
+}
+
+/* Remove library button */
+#library-button {
+  display: none !important;
+}
+
+#nav-bar {
+  border-top-width: 0 !important;
+  /* padding-left: 70px !important; */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+#nav-bar #nav-bar-customization-target {
+  background-color: var(--nord0) !important;
+}
+
+/* Fix tab bar barbackground and border */
+#TabsToolbar {
+  /* background-image: linear-gradient(#f0f0f0, #f6f6f6) !important; */
+  border: none !important;
+  box-shadow: none !important;
+}
+/* Remove shadow on tabs scroll icons */
+.tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator:not([collapsed]), .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator:not([collapsed]){
+  background: none !important;
+  border: none !important;
+}
+/* Fix tab height */
+#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox, #tabbrowser-tabs[positionpinnedtabs] > .tabbrowser-tab[pinned] {
+  min-height: 20px !important;
+}
+
+@-moz-document url-prefix(about:blank) {*{background-color: var(--nord0) !important;}}
