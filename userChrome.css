@@ -65,6 +65,21 @@
   --lwt-accent-color: var(--nord0) !important;
 }
 
+#navigator-toolbox {
+  /* position: relative; */
+  /* height: 8px; */
+  /* overflow: hidden; */
+  /* opacity:0; */
+  /* margin-bottom: 0px; */
+  /* z-index: 1; */
+}
+#navigator-toolbox:hover {
+  /* height:58px; */
+  /* margin-bottom: -50px; */
+  /* overflow:extend; */
+  /* opacity:1; */
+}
+
 /* Make toolbar icons smaller */
 .toolbarbutton-icon {
   width: 23px !important;
@@ -122,6 +137,7 @@
 
 /* Move tabs to bottom */
 #TabsToolbar {
+  visibility: collapse;
   -moz-box-ordinal-group: 100;
   margin-left: 0 !important;
   padding-left: 0 !important;
@@ -214,6 +230,10 @@ hbox.titlebar-placeholder {
 }
 #nav-bar #nav-bar-customization-target {
   background-color: var(--nord0) !important;
+}
+#nav-bar-overflow-button{
+  background-color: var(--nord0) !important;
+  opacity: 1 !important;
 }
 
 /* Fix tab bar barbackground and border */
